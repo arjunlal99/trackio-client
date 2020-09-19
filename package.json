@@ -1,0 +1,14 @@
+{
+  "name": "trackio-client",
+  "version": "0.1.0",
+  "description": "Package for connecting client with trackio server instance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arjunlal M A",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
