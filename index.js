@@ -25,14 +25,17 @@ class ClientConnection {
 
   /*
       Obtain useragent information from endpoint, pass it as argument and send as POST body to trackio node server
+
+      Also pass the end point tracked at the trackio-node end as the second argument
   */
 
-  sendSignal(useragent){
+  sendSignal(useragent, endpoint){
     /*
       useragent => JSON
-
+      endpoint => String
+      Eg: "/home", "/about"
     */
-    axios.post(this.protocol + '://' + this.hostname + ':' + this.port , {information: useragent} ).then((res) => {
+    axios.post(this.protocol + '://' + this.hostname + ':' + this.port + endpoint, {information: useragent, timestamp: new Date().getTime()} ).then((res) => {
       console.log("userAgent Signal Sent Succesfully")
     }).catch((err) => {
       console.error(err)
